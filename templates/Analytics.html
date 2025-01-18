@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Self-Care Analytics</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="analytics-style.css">
+    <link rel="stylesheet" href="../static/CSS/analytics-style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
@@ -57,7 +57,7 @@
             </div>
         </div>
 
-        <button id="saveBtn">Save Data</button>
+        <button id="saveBtn" onclick="saveAnalytics()">Save Data</button>
         <div id="feedback"></div>
 
         <div class="charts">
@@ -77,10 +77,27 @@
 
         <div id="analytics">
             <h3>Analytics Overview</h3>
-            <div id="analyticsData"></div>
+            <div id="analyticsData">
+                <p><strong>BMI:</strong> {{ bmi }}</p>
+                <p><strong>Last Water Intake:</strong> {{ time_since_lwit }}</p>
+                <p><strong>Last Face Wash:</strong> {{ time_since_lfwt }}</p>
+                <p><strong>Calories Burnt Today:</strong> {{ calories_burnt }} kcal</p>
+                <p><strong>Steps Taken Today:</strong> {{ steps_walked }} steps</p>
+            </div>
         </div>
+
+        <form method="POST">
+            <h3 class="update">Update Self-Care Data</h3>
+            <label for="last_water_intake_time">Last Water Intake:</label>
+            <input type="datetime-local" name="last_water_intake_time" value="{{ self_care['last_water_intake_time'] }}">
+            
+            <label for="steps_walked_today">Steps Walked Today:</label>
+            <input type="number" name="steps_walked_today" value="{{ steps_walked }}" min="0">
+            
+            <button type="submit">Update</button>
+        </form>
     </div>
 
-    <script src="script.js"></script>
+    <script src="../static/JS/script.js"></script>
 </body>
 </html>

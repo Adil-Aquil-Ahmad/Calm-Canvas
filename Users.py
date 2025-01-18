@@ -1,5 +1,6 @@
 import hashlib
 from pymongo import MongoClient
+import datetime
 
 class Users:
     
@@ -90,7 +91,9 @@ def save_users(username, email, password):
     client = MongoClient("localhost", 27017)
     db = client.CCUsers
     users = db.Users
+    userscp = db.UserSCP
     users.insert_one({'email': email, 'password': password, 'privilege': 'user', 'profile': {'name': {'first_name': username}}})
+    userscp.insert_one({'email': email, 'last_water_intake_time': datetime.datetime.now(), 'last_face_wash_time': datetime.datetime.now(), 'steps_walked_today': 0})
 
 
 Users.instantiate_from_database()

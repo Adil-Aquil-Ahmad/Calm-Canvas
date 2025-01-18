@@ -1,16 +1,19 @@
 from Users import Users, UserProfile
 import datetime
 
-class SelfCare(UserProfile):
+class SelfCare():
 
     all = []
     
     def __init__(self, email: str, height: int, weight: float, last_water_intake_time: datetime, last_face_wash_time: datetime, steps_Walked_today: int):
 
-        super.__init__(email, height, weight)
+        self.email = email
+        self.height = height
+        self.weight = weight
         self.LWIT = last_water_intake_time
         self.LFWT = last_face_wash_time
         self.SWT = steps_Walked_today
+
 
         SelfCare.all.append(self)
 
@@ -23,13 +26,13 @@ class SelfCare(UserProfile):
     def time_since_lwit(self):
         
         now = datetime.datetime.now()
-        since = self.LWIT - now
+        since = now - self.LWIT
         return since
     
     def time_since_LFWT(self):
 
         now = datetime.datetime.now()
-        since = self.LFWT - now
+        since = now - self.LWIT
         return since
     
     def calculate_calories_burnt(self):

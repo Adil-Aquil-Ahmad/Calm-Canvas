@@ -134,6 +134,7 @@ button:hover {
     display: flex;
     justify-content: space-around;
     margin-top: 20px;
+    color: black;
 }
 
 #analyticsData div {
@@ -144,8 +145,56 @@ button:hover {
     width: 200px;
 }
 
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+form label {
+    font-size: 16px;
+    color: #333;
+}
+
+form input {
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+}
+
+form button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    width: 100%;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+.update {
+    color: green;
+}
+
+
 @media (max-width: 768px) {
     .charts {
         grid-template-columns: 1fr;
+    }
+
+    #analyticsData {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    #analyticsData div {
+        width: 100%;
     }
 }
