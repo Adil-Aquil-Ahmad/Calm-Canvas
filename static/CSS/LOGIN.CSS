@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    background: url('fruits-water-gym.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+}
+
+.form-container {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+h4{
+    text-align: center;
+    margin: 1rem;
+}
+h3{
+    transition: 0.3s;
+    text-align: center;
+    text-decoration: underline;
+}
+h3:hover{
+    transition: 0.3s;
+    cursor: pointer;
+    transform:scale(1.1);
+    color: #638C6D;
+}
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.signup-container {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.login-container {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+body {
+    background-size: cover;
+    background-position: center center;
+}

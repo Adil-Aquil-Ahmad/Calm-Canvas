@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self-Care Analytics</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="analytics-style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Self-Care Analytics</h1>
+            <p>Track and improve your well-being</p>
+        </header>
+
+        <div class="trackers">
+            <div class="tracker">
+                <h3>Mood Tracker</h3>
+                <select id="moodSelect">
+                    <option value="happy">Happy</option>
+                    <option value="neutral">Neutral</option>
+                    <option value="sad">Sad</option>
+                </select>
+            </div>
+
+            <div class="tracker">
+                <h3>Sleep Tracker</h3>
+                <input type="number" id="sleepHours" placeholder="Hours of Sleep" min="0" max="24">
+            </div>
+
+            <div class="tracker">
+                <h3>Water Intake</h3>
+                <input type="number" id="waterIntake" placeholder="Water (in liters)" min="0" step="0.1">
+            </div>
+
+            <div class="tracker">
+                <h3>Exercise</h3>
+                <input type="text" id="exercise" placeholder="Exercise Type">
+                <input type="number" id="exerciseDuration" placeholder="Duration (min)" min="0">
+            </div>
+
+            <div class="tracker">
+                <h3>Mindfulness</h3>
+                <input type="number" id="mindfulness" placeholder="Minutes of Meditation" min="0">
+            </div>
+
+            <div class="tracker">
+                <h3>Nutrition</h3>
+                <input type="text" id="nutrition" placeholder="Meal Description">
+            </div>
+
+            <div class="tracker">
+                <h3>Goals</h3>
+                <input type="text" id="goal" placeholder="Set a goal">
+            </div>
+        </div>
+
+        <button id="saveBtn">Save Data</button>
+        <div id="feedback"></div>
+
+        <div class="charts">
+            <div class="chart">
+                <canvas id="moodChart"></canvas>
+            </div>
+            <div class="chart">
+                <canvas id="sleepChart"></canvas>
+            </div>
+            <div class="chart">
+                <canvas id="waterChart"></canvas>
+            </div>
+            <div class="chart">
+                <canvas id="exerciseChart"></canvas>
+            </div>
+        </div>
+
+        <div id="analytics">
+            <h3>Analytics Overview</h3>
+            <div id="analyticsData"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
