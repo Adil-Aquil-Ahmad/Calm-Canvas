@@ -11,12 +11,12 @@ def initialise_routes(app):
         if 'username' in session:
             return redirect(url_for('my_profile'))
         else:
-            return render_template('LOGIN.html')
+            return render_template('Login.html')
 
     @app.route('/analytics')
     def analytics():
         if 'username' in session:
-            return render_template('analytic.html')
+            return render_template('Analytic.html')
         else:
             return redirect(url_for('login'))
 
@@ -38,7 +38,7 @@ def initialise_routes(app):
                     return redirect(url_for('my_profile'))
             flash("Invalid email or password.", "danger")
 
-        return render_template('LOGIN.html')
+        return render_template('Login.html')
 
     @app.route('/register', methods=['GET', 'POST'])
     def register():
@@ -56,7 +56,7 @@ def initialise_routes(app):
             flash("Registration successful! Please log in.", "success")
             return redirect(url_for('login'))
 
-        return render_template('signup.html')
+        return render_template('SignUp.html')
 
     @app.route('/my_profile', methods=['GET', 'POST'])
     def my_profile():
@@ -106,7 +106,7 @@ def initialise_routes(app):
             return redirect(url_for('my_profile'))
 
         return render_template(
-            'PROFILE.html', 
+            'Profile.html', 
             profile=profile_data
         )
 
